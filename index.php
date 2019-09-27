@@ -19,7 +19,7 @@ $score = new ScorePartwise (
 			[new Measure(
 				[new Attributes(
 					[new Divisions(1),
-					 new Key(['fifths' => -3]),
+					 new Key(['fifth' => -3]),
 					 new Time(['beats' => 4, 'beat-type' => 4]),
 					 new Clef(['sign' => 'G', 'line' => 2])	
 					]
@@ -50,8 +50,8 @@ $dom->preserveWhiteSpace = FALSE;
 $dom->loadXML($score->toMusicXML());
 $dom->formatOutput = TRUE;
 $xml = $dom->saveXML();
-dump( $dom->saveXML());
-dump($score);
+var_dump( $dom->saveXML());
+var_dump($score);
 file_put_contents("test.xml",$xml);
 // $staves= new Staves(3, ['yeah' => '2']);
 // $m = new AccordionMiddle('3');

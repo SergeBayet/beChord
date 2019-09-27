@@ -4,6 +4,12 @@
 abstract class CompoValues {
 
 	static $values = [
+		'xs:IDREF' => [
+			'type' => 'xs:string'
+		],
+		'xs:ID' => [
+			'type' => 'xs:string'
+		],
 		'xs:decimal' => [
 			'type' => 'regex',
 			'values' => '(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)'

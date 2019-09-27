@@ -167,12 +167,28 @@ class CompoObject
 			}
 			if($this->components)
 			{
-
+				if(!$this->checkComponentsValue($this->components, $class::$availableComponents))
+				{
+					return false;
+				}
 			}
 		}
 		protected function checkComponentsValue(array $components, array $availableComponents)
 		{
-
+			//dump($components);
+			foreach($components as $key => $component)
+			{
+				if(!$component instanceof CompoObject)
+				{
+					dump($key);
+					dump($component);
+					if(!isset($availableComponents[$key]))
+					{
+						echo "<p>Element not authorized : $key for ".get_class($this)."</p>";
+					}
+				}
+				
+			}
 		}
 		protected function checkOptionsValue(array $options, array $availableOptions)
 		{
@@ -186,8 +202,8 @@ class CompoObject
 				}
 				if(!$this->checkTextValue($option, $availableOptions[$key]))
 				{
-					
-					echo 'Value not valid!<br/>';
+					echo '<p>Value not valid!</p>';
+					echo "<p>$option : $key -> ".$availableOptions[$key].'</p>';
 					return false;
 				}
 			}
