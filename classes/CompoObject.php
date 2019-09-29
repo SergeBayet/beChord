@@ -175,7 +175,7 @@ class CompoObject
 		}
 		protected function checkComponentsValue(array $components, array $availableComponents)
 		{
-			//dump($components);
+			
 			foreach($components as $key => $component)
 			{
 				if(!$component instanceof CompoObject)
@@ -184,7 +184,12 @@ class CompoObject
 					dump($component);
 					if(!isset($availableComponents[$key]))
 					{
-						echo "<p>Element not authorized : $key for ".get_class($this)."</p>";
+						echo "<p>Element not authorized : $key for ".get_class($this)." with value $component</p>";
+					}
+					elseif(!$this->checkTextValue($component, $availableComponents[$key]))
+					{
+						echo '<p>Value not valid!</p>';
+						echo "<p>$component : $key -> ".$availableComponents[$key].'</p>';
 					}
 				}
 				

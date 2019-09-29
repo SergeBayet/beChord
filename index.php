@@ -19,7 +19,7 @@ $score = new ScorePartwise (
 			[new Measure(
 				[new Attributes(
 					[new Divisions(1),
-					 new Key(['fifth' => -3]),
+					 new Key(['fifths' => -3]),
 					 new Time(['beats' => 4, 'beat-type' => 4]),
 					 new Clef(['sign' => 'G', 'line' => 2])	
 					]
@@ -66,8 +66,7 @@ dump($acc);
 // dump($barline->toMusicXML());
 
 $debug = new _Debug();
-
-//dump($debug->getMissingComponentsClass());
+dump($debug->getMissingComponentsClass());
 die();
 $staves= new Staves(3, ['yeah' => '2']);
 dump($staves->toMusicXML());

@@ -646,6 +646,9 @@ abstract class CompoValues {
 				'over', 'under'
 			]
 		],
+		'part-name' => [
+			'type' => 'xs:string'
+		],
 		'percent' => [
 			'type' => 'xs:decimal',
 			'restriction' => [
@@ -723,7 +726,7 @@ abstract class CompoValues {
 				'very-low'
 			]
 		],
-		'semi-tones' => [
+		'semitones' => [
 			'type' => 'xs:decimal'
 		],
 		'show-frets' => [
@@ -1026,5 +1029,230 @@ abstract class CompoValues {
 			'values' => '([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))'
 		]
 	];
-
+	static $complexValues = [
+		'empty-placement' => [
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'placement' => 'above-below',
+			'derivedBy' => 'empty'
+		],
+		'empty-line' => [
+			'line-shape' => 'line-shape',
+			'line-type' => 'line-type',
+			'dash-length' => 'tenths',
+			'space-length' => 'tenths',
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'placement' => 'above-below',
+			'derivedBy' => 'empty'
+		],
+		'placement-text' => [
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'placement' => 'above-below',
+			'derivedBy' => 'xs:string'
+		],
+		'bar-style-color' => [
+			'color' => 'color',
+			'derivedBy' => 'bar-style'
+		],
+		'formatted-text' => [
+			'justify' => 'left-center-right',
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'halign' => 'left-center-right',
+			'valign' => 'valign',
+			'underline' => 'number-of-lines',
+			'overline' => 'number-of-lines',
+			'line-through' => 'number-of-lines',
+			'rotation' => 'rotation-degrees',
+			'letter-spacing' => 'number-or-normal',
+			'line-height' => 'number-or-normal',
+			'xml:lang' => 'xs:anySimpleType',
+			'xml:space' => 'xs:NCName',
+			'dir' => 'text-direction',
+			'enclosure' => 'enclosure-shape',
+			'derivedBy' => 'xs:string'
+		],
+		'empty-font' => [
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'derivedBy' => 'empty'
+		],
+		'empty-print-style-align' => [
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'halign' => 'left-center-right',
+			'valign' => 'valign',
+			'derivedBy' => 'empty'
+		],
+		'typed-text' => [
+			'type' => 'xs:token',
+			'derivedBy' => 'xs:string'
+		],
+		'style-text' => [
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'derivedBy' => 'xs:string'
+		],
+		'text-element-data' => [
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'underline' => 'number-of-lines',
+			'overline' => 'number-of-lines',
+			'line-through' => 'number-of-lines',
+			'rotation' => 'rotation-degrees',
+			'letter-spacing' => 'number-or-normal',
+			'xml:lang' => 'xs:anySimpleType',
+			'dir' => 'text-direction',
+			'derivedBy' => 'xs:string'
+		],
+		'text-font-color' => [
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'underline' => 'number-of-lines',
+			'overline' => 'number-of-lines',
+			'line-through' => 'number-of-lines',
+			'rotation' => 'rotation-degrees',
+			'letter-spacing' => 'number-or-normal',
+			'xml:lang' => 'xs:anySimpleType',
+			'dir' => 'text-direction',
+			'derivedBy' => 'xs:string'
+		],
+		'horizontal-turn' => [
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'placement' => 'above-below',
+			'start-note' => 'start-note',
+			'trill-step' => 'trill-step',
+			'two-note-turn' => 'two-note-turn',
+			'accelerate' => 'yes-no',
+			'beats' => 'trill-beats',
+			'second-beat' => 'percent',
+			'last-beat' => 'percent',
+			'slash' => 'yes-no',
+			'derivedBy' => 'empty'
+		],
+		'empty-trill-sound' => [
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'placement' => 'above-below',
+			'start-note' => 'start-note',
+			'trill-step' => 'trill-step',
+			'two-note-turn' => 'two-note-turn',
+			'accelerate' => 'yes-no',
+			'beats' => 'trill-beats',
+			'second-beat' => 'percent',
+			'last-beat' => 'percent',
+			'derivedBy' => 'empty'
+		],
+		'empty-print-object-style-align' => [
+			'print-object' => 'yes-no',
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'halign' => 'left-center-right',
+			'valign' => 'valign',
+			'derivedBy' => 'empty'
+		],
+		'hammer-on-pull-off' => [
+			'type' => 'start-stop',
+			'number' => 'number-level',
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'placement' => 'above-below',
+			'derivedBy' => 'xs:string'
+		],
+		'heel-toe' => [
+			'substitution' => 'yes-no',
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'font-family' => 'comma-separated-text',
+			'font-style' => 'font-style',
+			'font-size' => 'font-size',
+			'font-weight' => 'font-weight',
+			'color' => 'color',
+			'placement' => 'above-below',
+			'derivedBy' => 'empty'
+		]
+	];
 } 

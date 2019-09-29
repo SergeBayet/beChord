@@ -14,5 +14,4 @@ class Bass extends CompoObject {
 		$this->options = $options;
 		$this->check();
 	}
-
 }
