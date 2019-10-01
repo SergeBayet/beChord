@@ -75,7 +75,7 @@ class CompoObject
 		protected function elementNameToClassName($elementName)
 		{
 			$className = str_replace('-', '', ucwords($elementName, '-'));
-			if(in_array($className, ['Print', 'String']))
+			if(in_array($className, ['Print', 'String', 'Function']))
 			{
 				$className .= '_';
 			}
@@ -180,8 +180,6 @@ class CompoObject
 			{
 				if(!$component instanceof CompoObject)
 				{
-					dump($key);
-					dump($component);
 					if(!isset($availableComponents[$key]))
 					{
 						echo "<p>Element not authorized : $key for ".get_class($this)." with value $component</p>";

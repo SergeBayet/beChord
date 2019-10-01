@@ -13,7 +13,7 @@ class Dynamics extends CompoObject {
 																				'fz' =>	'empty', 
 																				'mf' =>	'empty', 
 																				'mp' =>	'empty', 
-																				'other-dynamics' =>	'string', 
+																				'other-dynamics' =>	'xs:string', 
 																				'p' =>	'empty', 
 																				'pp' =>	'empty', 
 																				'ppp' =>	'empty', 

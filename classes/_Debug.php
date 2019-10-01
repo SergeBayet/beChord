@@ -39,8 +39,17 @@ class _Debug extends CompoObject {
 								}
 								else
 								{
-									// Create Class dynamically with simple value (empty)
-									$simpleElements[] = $keyClass.' : '.$val;
+									if(class_exists($valClass) && !isset(CompoValues::$values[$val]))
+									{
+										$simpleElements[] = $keyClass.' : '.$val;
+									}
+									else
+									{
+										// Create Class dynamically with simple value (empty)
+										//$simpleElements[] = $keyClass.' : '.$val;
+										$out = $this->createSimpleDynamicClass($keyClass, $val);
+										echo '<pre>'.$out.'</pre>';
+									}
 								}
 							}
 							
@@ -49,7 +58,36 @@ class _Debug extends CompoObject {
 				}
 		}
 		
-    return ['simpleElements' => $simpleElements, 'complexElements' => array_unique($complexElements)];
+    return ['simpleElements' => array_unique($simpleElements), 'complexElements' => array_unique($complexElements)];
+	}
+	private function createSimpleDynamicClass($class, $val)
+	{
+		$attributes = CompoValues::$values[$val];
+		
+		$out = '';
+		$out = "<?php \r\n";
+		$out .= "class $class extends CompoObject { \r\n";
+		
+		if($val !== 'empty')
+		{
+			$out .=  "    protected \$textRestriction = '".$val."';\r\n";
+		
+			$out .=  "    function __construct(\$text) {\r\n";
+			$out .= "        \$this->text = \$text;\r\n";
+			$out .= "        \$this->check();\r\n";
+		}
+		else
+		{
+			$out .= "    function __construct() {\r\n";
+			$out .= "        \$this->check();\r\n";
+		}
+
+		$out .= "    }\r\n";
+		$out .= "}";
+		
+		file_put_contents(__DIR__."/../dynamic/".$class.".php", $out);
+		
+		return $out;
 	}
 	private function createDynamicClass($class, $val)
 	{

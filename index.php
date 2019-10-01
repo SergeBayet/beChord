@@ -64,7 +64,7 @@ dump($acc);
 
 // $barline = new Barline(['bar-style' => '1'], ['location' => 'rght', 'segno' => 'S']);
 // dump($barline->toMusicXML());
-
+die();
 $debug = new _Debug();
 dump($debug->getMissingComponentsClass());
 die();

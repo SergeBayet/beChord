@@ -29,10 +29,4 @@ class Mordent extends CompoObject {
 		$this->options = $options;
 		$this->check();
 	}
-
-	public function toMusicXML() {
-		$out = '<mordent '.$this->createXMLAttributes($this->options).'/>';
-	
-		return $out;
-	}
 }

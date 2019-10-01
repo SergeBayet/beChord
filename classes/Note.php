@@ -13,7 +13,7 @@ class Note extends CompoObject {
 																			'voice' => 'xs:string',
 																			'type' => 'note-type',
 																			'dot' => 'empty-placement',
-																			'accdiental' => 'accidental',
+																			'accidental' => 'accidental',
 																			'time-modification' => 'time-modification',
 																			'stem' => 'stem',
 																			'notehead' => 'notehead',

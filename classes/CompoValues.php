@@ -1253,6 +1253,16 @@ abstract class CompoValues {
 			'color' => 'color',
 			'placement' => 'above-below',
 			'derivedBy' => 'empty'
+		],
+		'image' => [
+			'source' => 'xs:anyURI',
+			'type' => 'xs:token',
+			'default-x' => 'tenths',
+			'default-y' => 'tenths',
+			'relative-x' => 'tenths',
+			'relative-y' => 'tenths',
+			'halign' => 'left-center-right',
+			'valign' => 'valign'
 		]
 	];
 } 
